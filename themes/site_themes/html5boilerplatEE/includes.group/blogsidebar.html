@@ -1,0 +1,75 @@
+<div id="blogsidebar">
+
+<div class="blogsidebar">
+<h4>Members:</h4>
+<p>
+{if logged_in}
+ <a href="{path=member/profile}">Your Account</a>  |  <a href="{path=logout}">Logout</a>
+{/if}
+
+{if logged_out}
+ <a href="{path=member/login}">Login</a> | <a href="{path=member/register}">Register</a>
+{/if}
+
+ | <a href="{path=member/memberlist}">Member List</a>
+</p>
+</div-->
+
+<div class="blogsidebar">
+{exp:search:simple_form search_in="everywhere"}
+<h4 class="sidetitle">Search</h4>
+<p>
+<input type="text" name="keywords" value="" class="input" size="18" maxlength="100" >
+<input type="submit" value="submit"  class="submit" >
+</p>
+
+{/exp:search:simple_form}
+</div>
+<div class="blogsidebar">
+<h4 class="sidetitle">Categories</h4>
+{exp:channel:categories channel="blog" style="nested"}
+<a href="{path='blog/index'}">{category_name}</a>
+{/exp:channel:categories}
+</div>
+<div class="blogsidebar">
+
+<h4 class="sidetitle">Monthly Archives</h4>
+<ul>
+{exp:channel:month_links weblog="blog"}
+<li><a href="{path='blog/index'}">{month} {year}</a></li>
+{/exp:channel:month_links}
+
+<li><a href="{path='blog/categories'}">Category Archives</a></li>
+</ul>
+</div>
+<div class="blogsidebar">
+<h4 class="sidetitle">Most recent entries</h4>
+<ul>
+{exp:channel:entries orderby="date" sort="desc" limit="15" channel="blog" dynamic="off" disable="pagination|custom_fields|categories|member_data|trackbacks"}
+<li><a href="{title_permalink='blog/comments'}">{title}</a></li>
+{/exp:channel:entries}
+</ul>
+</div>
+<div class="blogsidebar">
+<h4 class="sidetitle">Syndicate</h4>
+<ul>
+<li><a href="{path='blog/rss'}">RSS</a></li>
+
+</ul>
+
+</div>
+<!--div class="blogsidebar">
+
+<h4 class="sidetitle">Join our Mailing List</h4>
+
+{exp:mailinglist:form}
+
+<p><input type="text" name="email" value="" class="input" size="18" >
+<input type="submit" value="submit"  class="submit" ></p>
+
+{/exp:mailinglist:form}
+
+</div>
+
+
+</div>

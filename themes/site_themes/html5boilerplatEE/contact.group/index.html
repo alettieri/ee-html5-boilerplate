@@ -1,0 +1,59 @@
+	{embed="includes/head"}
+  </head>
+<body>
+	{embed="includes/header"}
+
+
+{if phone}
+			<div class="phonenumber">
+				<h3>Phone Us</h3>
+				<label>Office:</label> {phone}
+			</div>
+{/if}
+{if emailaddress}
+			<div class="emailaddress">
+				<h3>Email Us</h3>
+				<label>Email:</label> <a href="mailto:{emailaddress}">{emailaddress}</a>
+			</div>
+{/if}
+{if fax}
+			<div class="fax">
+				<h3>Fax Us</h3>
+				<label>Fax: </label>{fax}
+			</div>
+{/if}
+			
+			<h3>Contact Form</h3>
+			{exp:freeform:form form_name="default_form" return="contact/thanks" notify="{emailaddress}" template="default_template" required="firstname|lastname|email"}
+				<div id="contactform">
+					<label><span class="requiredfield">*</span>First Name: </label>
+					<input type="text" name="firstname" value="" />
+					<label><span class="requiredfield">*</span>Last Name: </label>
+					<input type="text" name="lastname" value="" />
+					<label><span class="requiredfield">*</span>Email Address:</label>
+					<input type="text" name="email" value="" />
+					<label><span class="requiredfield">*</span>Phone Number:</label>
+					<input type="text" name="phone" value="" />
+					<label><span class="requiredfield">*</span>Message:</label>
+					<textarea rows="5" cols="50" type="text" name="message" value="" /></textarea>
+					{if captcha}
+						<p>Please enter the word you see in the image below:</p>
+						{captcha}
+						<input id="captcha" type="text" name="captcha" value="" maxlength="20" />
+					{/if}
+					<input type="submit" name="submit" value="submit" id="submit" />
+				</div>
+			{/exp:freeform:form} 
+
+			<div class="location">
+				<h3>Find us</h3>
+				<center><iframe width="900" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{google_map}&amp;output=embed"></iframe><br /><small><a href="{google_map}" style="color:#0000FF;text-align:left">View Larger Map</a></small></center>
+			</div>
+
+{embed="includes/footer"}
+{embed="includes/analytics"}
+</body>
+</html>
+
+
+

@@ -1,0 +1,44 @@
+	{embed="includes/head"}
+  </head>
+<body>
+	{embed="includes/header"}
+
+
+		<table id="searchresults" border="0" cellpadding="6" cellspacing="1" width="100%">
+						<tr>
+							<td class="resultHead">{lang:title}</td>
+							<td class="resultHead">{lang:excerpt}</td>
+							<td class="resultHead">{lang:author}</td>
+							<td class="resultHead">{lang:date}</td>
+							<td class="resultHead">{lang:total_comments}</td>
+							<td class="resultHead">{lang:recent_comments}</td>
+						</tr>
+
+						{exp:search:search_results switch="resultRowOne|resultRowTwo"}
+
+						<tr>
+							<td class="{switch}" width="30%" valign="top"><b><a href="{auto_path}">{title}</a></b></td>
+							<td class="{switch}" width="30%" valign="top">{excerpt}</td>
+							<td class="{switch}" width="10%" valign="top"><a href="{member_path=member/index}">{author}</a></td>
+							<td class="{switch}" width="10%" valign="top">{entry_date format="%m/%d/%y"}</td>
+							<td class="{switch}" width="10%" valign="top">{comment_total}</td>
+							<td class="{switch}" width="10%" valign="top">{recent_comment_date format="%m/%d/%y"}</td>
+						</tr>
+
+						{/exp:search:search_results}
+					</table>
+
+					{if paginate}
+						<div class='paginate'>
+							<span class='pagecount'>{page_count}</span>&nbsp; {paginate}	
+						</div>
+					{/if}
+				</td>
+			</tr>
+		</table>
+
+
+{embed="includes/footer"}
+{embed="includes/analytics"}
+</body>
+</html>

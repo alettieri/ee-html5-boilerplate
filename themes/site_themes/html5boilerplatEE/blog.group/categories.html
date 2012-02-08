@@ -1,0 +1,25 @@
+	{embed="includes/head"}
+  </head>
+<body>
+	{embed="includes/header"}
+	
+	
+			<h3 class="sidetitle">Categories</h3>
+			<div class="entry">
+				{exp:channel:category_archive channel="blog"}
+					{categories}<h4>{category_name}</h4>{/categories}
+					{entry_titles}<a href="{path='blog/comments'}">{title}</a>{/entry_titles}
+				{/exp:channel:category_archive}
+			</div>
+			<p><a href="{homepage}">&lt;&lt; Back to main</a></p>
+		
+		
+		<div class="sidebarContainer">
+			{embed="includes/blogsidebar"}
+		</div>
+
+
+	{embed="includes/footer"}
+	{embed="includes/analytics"}
+</body>
+</html>

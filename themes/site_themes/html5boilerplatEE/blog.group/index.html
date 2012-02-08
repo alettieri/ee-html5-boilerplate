@@ -1,0 +1,40 @@
+	{embed="includes/head"}
+  </head>
+<body>
+	{embed="includes/header"}
+
+		{exp:channel:entries channel="blog" orderby="date" sort="desc" limit="15" disable="member_data|trackbacks"}
+			<div class="entry">
+				<a href="{title_permalink='blog/comments'}"><h2 class="title">{title}</h2></a>
+				{blog_content}
+				<div class="posted">Posted by {author} on {entry_date format='%m/%d'} at {entry_date format='%h:%i %A'}
+					<br>
+					{categories}
+						<a href="{path='blog/index'}">Categories: {category_name}</a> |
+					{/categories}
+
+					{if allow_comments}
+						<a href="{title_permalink='blog/comments'}">Comments ({comment_total})</a> |
+					{/if}
+					{if allow_trackbacks}
+						({trackback_total}) <a href="{trackback_path='blog/trackbacks'}">Trackbacks</a> |
+					{/if}
+					<a href="{title_permalink='blog/index'}">Permalink</a>
+				</div>
+				{paginate}
+				<div class="paginate">
+					<span class="pagecount">Page {current_page} of {total_pages} pages</span>  {pagination_links}
+					</div>
+					{/paginate}
+				</div>
+			{/exp:channel:entries}
+		</div>
+	<div class="sidebarContainer">
+		{embed="includes/blogsidebar"}
+	</div>
+
+
+{embed="includes/footer"}
+{embed="includes/analytics"}
+</body>
+</html>

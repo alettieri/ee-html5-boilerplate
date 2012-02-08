@@ -1,0 +1,20 @@
+<div id="container">
+    <header>
+		<div class="">
+			<h1><a href="/">{companyname}</a></h1>
+			<h2>{tagline}</h2>
+      	</div>
+      	
+      	<nav>
+			{embed="includes/navigation"}
+	    </nav>
+      	
+      	
+      	<div class="grid_4 search omega">
+			{exp:search:simple_form weblog="news"}
+					<input type="text" name="keywords" id="keywords" class="searchinput" value="" size="18" maxlength="100" />
+					<input type="submit" value="search" class="searchsubmit" />
+			{/exp:search:simple_form}
+		</div>
+    </header>
+    <div id="main" role="main">

@@ -1,0 +1,32 @@
+	{embed="includes/head"}
+  </head>
+<body>
+	{embed="includes/header"}
+
+
+
+{exp:channel:entries orderby="date" channel="blog" sort="desc" limit="100" disable="pagination|categories|member_data|trackbacks"}
+
+{date_heading display="yearly"}
+<h3 class="title">{entry_date format="%Y"}</h3>
+{/date_heading}
+
+{date_heading display="monthly"}
+<h4 class="date">{entry_date format="%F"}</h4>
+{/date_heading}
+
+<ul>
+<li><a href="{title_permalink="blog/comments"}">{title}</a></li>
+</ul>
+{/exp:channel:entries}
+</div>
+
+	<div class="sidebarContainer">
+		{embed="includes/blogsidebar"}
+	</div>
+
+
+{embed="includes/footer"}
+{embed="includes/analytics"}
+</body>
+</html>

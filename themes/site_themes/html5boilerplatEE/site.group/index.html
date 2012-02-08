@@ -1,0 +1,30 @@
+	{embed="includes/head"}
+
+  </head>
+<body>
+	{embed="includes/header"}
+
+
+	{exp:channel:entries channel="frontpagelargepics" sort="asc" orderby="date" disable="trackbacks|member_data|pagination"}
+		<img src="{fp_image}" class="full" alt="{title}">
+	{/exp:channel:entries}
+
+
+
+
+	{exp:channel:entries channel="blog" limit="2" sort="desc" orderby="date" disable="trackbacks|member_data|pagination"}
+			<div class="">
+				<h3>{title}</h3>
+				{exp:trunchtml chars="200" inline="..." ending="<a class='readmore' href='{title_permalink=blog/comments}'>read more...</a>"}
+{exp:tagstripper:tagsToStrip tags="img"}
+{blog_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+			</div>
+	{/exp:channel:entries}
+
+
+
+
+{embed="includes/footer"}
+{embed="includes/analytics"}
+</body>
+</html>

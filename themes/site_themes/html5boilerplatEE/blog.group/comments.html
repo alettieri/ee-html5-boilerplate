@@ -1,0 +1,122 @@
+	{embed="includes/head"}
+  </head>
+<body>
+	{embed="includes/header"}
+
+
+			{exp:channel:entries channel="blog" limit="1" disable="member_data|trackbacks"}
+				<div class="entry">
+					<h2 class="title">{title}</h2>
+					{blog_content}
+					<div class="posted">Posted by {author} on {entry_date format='%m/%d'} at {entry_date format='%h:%i %A'}
+						<br>
+						{categories}
+						<a href="{path='blog/index'}">{category_name}</a> &#8226;
+						{/categories}
+
+						<a href="{title_permalink='blog/index'}">Permalink</a>
+
+					</div>
+
+				</div>
+			{/exp:channel:entries}
+
+{exp:comment:entries channel="blog" limit="25"}
+<div class="comments">
+{comment}
+
+<div class="posted">Posted by {url_or_email_as_author}  &nbsp;on&nbsp; {comment_date format='%m/%d'} &nbsp;at&nbsp; {comment_date format='%h:%i %A'}</div>
+
+{paginate}
+<div class="paginate">
+<span class="pagecount">Page {current_page} of {total_pages} pages</span>  {pagination_links}
+</div>
+{/paginate}
+
+</div>
+
+{/exp:comment:entries}
+
+
+<div class="commentform">
+{exp:comment:form preview="blog/comment_preview"}
+
+{if logged_out}
+<p>
+Name:<br>
+<input type="text" name="name" value="{name}" size="50" />
+</p>
+<p>
+Email:<br>
+<input type="text" name="email" value="{email}" size="50" />
+</p>
+<p>
+Location:<br>
+<input type="text" name="location" value="{location}" size="50" />
+</p>
+<p>
+URL:<br>
+<input type="text" name="url" value="{url}" size="50" />
+</p>
+
+{/if}
+
+<p>
+<a href="{path=blog/smileys}" onclick="window.open(this.href, '_blank', 'width=400,height=440');return false;" onkeypress="this.onclick()">Smileys</a>
+</p>
+
+
+<p>
+<textarea name="comment" cols="50" rows="12">{comment}</textarea>
+</p>
+
+{if logged_out}
+<p><input type="checkbox" name="save_info" value="yes" {save_info} /> Remember my personal information</p>
+{/if}
+
+<p><input type="checkbox" name="notify_me" value="yes" {notify_me} /> Notify me of follow-up comments?</p>
+
+{if captcha}
+<p>Submit the word you see below:</p>
+<p>
+{captcha}
+<br>
+<input type="text" name="captcha" value="" size="20" maxlength="20" style="width:140px;" />
+</p>
+{/if}
+
+<input type="submit" class="submit" name="submit" value="Submit" />
+<input type="submit" class="submit" name="preview" value="Preview" />
+
+
+{/exp:comment:form}
+</div>
+
+<div class="center">
+
+{exp:channel:next_entry channel="blog"}
+<p>Next entry: <a href="{path=blog/comments}">{title}</a></p>
+{/exp:channel:next_entry}
+
+{exp:channel:prev_entry channel="blog"}
+<p>Previous entry: <a href="{path=blog/comments}">{title}</a></p>
+{/exp:channel:prev_entry}
+
+</div>
+
+
+<p><a href="{homepage}">&lt;&lt; Back to main</a></p>
+
+		</div>
+
+	<div class="sidebarContainer">
+		{embed="includes/blogsidebar"}
+	</div>
+
+
+{embed="includes/footer"}
+{embed="includes/analytics"}
+</body>
+</html>
+
+

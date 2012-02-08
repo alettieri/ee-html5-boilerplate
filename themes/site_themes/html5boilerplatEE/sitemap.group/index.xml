@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+<loc>
+{site_url}
+</loc>
+<lastmod>{current_time format="%Y-%d-%m"}</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+{exp:channel:entries channel="blog"}
+<url>
+<loc>
+{title_permalink='blog/comments'}
+</loc>
+<lastmod>{entry_date format="%Y-%d-%m"}</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+{/exp:channel:entries}
+{exp:channel:entries channel="about"}
+<url>
+<loc>
+{title_permalink='about'}
+</loc>
+<lastmod>{entry_date format="%Y-%d-%m"}</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+{/exp:channel:entries}
+
+</urlset>
