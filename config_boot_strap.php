@@ -191,7 +191,7 @@ if(isset($config)) {
         'license_number' => '',
         'site_index' => '',
         'admin_session_type' => 'cs',
-        'new_version_check' => 'y',
+        //'new_version_check' => 'y',
         'doc_url' => 'http://expressionengine.com/user_guide/',
 
         'site_url' => NSM_SITE_URL,
