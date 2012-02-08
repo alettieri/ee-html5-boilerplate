@@ -148,7 +148,7 @@ if(isset($config)) {
          * Theme - URL to theme assets
          * Example: <script src="{global:theme_url}/js/libs/modernizr-1.6.min.js"></script>
          */
-        'global:theme_url'          => NSM_SITE_URL . '/themes/site_themes/ee-html5-boilerplate',
+        'global:theme_url'          => NSM_SITE_URL . '/themes/site_themes/html5boilerplatEE',
         
         /**
          * CampaignMonitor - Slug for CM signup forms
@@ -230,7 +230,7 @@ if(isset($config)) {
         'strict_urls' => 'y',
         'save_tmpl_files' => 'y',
         'save_tmpl_revisions' => 'n',
-        'tmpl_file_basepath' => NSM_BASEPATH . '/themes/site_themes/ee-html5-boilerplate/',
+        'tmpl_file_basepath' => NSM_BASEPATH . '/themes/site_themes/html5boilerplatEE/',
         'hidden_template_indicator' => "_",
 
         // Theme preferences
