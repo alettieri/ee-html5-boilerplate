@@ -136,6 +136,7 @@ if(isset($config)) {
         // Tag parameters - Short hand tag params
         'global:param_disable_default'  => 'disable="categories|pagination|member_data"',
         'global:param_disable_all'      => 'disable="categories|custom_fields|member_data|pagination"',
+        'global:param_disable_blog'     => 'disable="pagination|categories|member_data|trackbacks"',
         'global:param_cache_param'      => 'cache="yes" refresh="10"',
         '-global:param_cache_param'     => '-cache="yes" refresh="10"', // disable by adding a '-' to the front of the global
 
@@ -281,6 +282,15 @@ if(isset($config)) {
 
         // Encryption / Session key
         'encryption_key' => '',
+
+        // File upload paths
+        /*'upload_preferences' => array(
+                                1 => array(                                                         // ID of upload destination
+                                    'name'        => 'About Images',                                // Display name in control panel
+                                    'server_path' => NSM_BASEPATH .'/content/uploads/about',        // Server path to upload directory
+                                    'url'         => NSM_SITE_URL . '/content/uploads/about/'       // URL of upload directory
+                                )
+        ),*/
 
         // NSM htaccess Generator
         'nsm_htaccess_generator_path' => array(NSM_BASEPATH . "/content/.htaccess")
