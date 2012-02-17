@@ -28,8 +28,8 @@ class Wt_share_this {
 			$this->entry_url 	= $this->EE->TMPL->fetch_param( "entry_url" );
 			$this->entry_title 	= $this->EE->TMPL->fetch_param( "entry_title" );	
 			$this->elem 		= ( $this->EE->TMPL->fetch_param( "element" ) ) 			 ? $this->EE->TMPL->fetch_param( "element" ) : "span";
-			$this->show_title   = ( $this->EE->TMPL->fetch_param( "show_title" ) ) 			 ? $this->EE->TMPL->fetch_param( "show_title" ) : true; 
 			$this->share_title  = ( $this->EE->TMPL->fetch_param( "share_title" ) ) 		 ? $this->EE->TMPL->fetch_param("share_title" ) : "Share:";
+			$this->show_title   = ( $this->EE->TMPL->fetch_param( "show_title" ) === "yes" ) ? true : false; 
 			$this->show_count	= ( $this->EE->TMPL->fetch_param( "show_count" ) === "yes" ) ? true : false;
 			$this->count_type	= ( $this->EE->TMPL->fetch_param( "count_type" ) === "v" )	 ? "_vcount" : "_hcount";
 			$this->return_data 	= $this->st_nodes();
@@ -79,8 +79,18 @@ class Wt_share_this {
 		
 		{exp:wt_share_this}
 		{exp:wt_share_this share="facebook|twitter|email"} shares facebook, twitter and email
+		
+		Count bubble
 		{exp:wt_share_this show_count="y" count_type="v"} Show count above button (vertical) - default
 		{exp:wt_share_this show_count="y" count_type="h"} Show count beside button (horizontal)
+		
+		Element
+		{exp:wt_share_this element="li"} Will render each icon wrapped in a li tag (li)
+		{exp:wt_share_this element="span"} Will render each icon wrapped in a span tag
+		{exp:wt_share_this element="div"} Will render each icon wrapped in a div tag
+		
+		Label
+		{exp:wt_share_this show_title="y" share_title="Share this:"} Will display Share this: before the icons - defaults to Share:
 		
 		
 		<?php 
