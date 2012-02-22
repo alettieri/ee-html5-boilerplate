@@ -23,7 +23,7 @@ class Wt_share_this {
 	public function __construct()
 	{
 			$this->EE 			=& get_instance();
-			$this->keys 		= array("facebook"=>"st_facebook", "twitter"=>"st_twitter","email"=>"st_email","plusone"=>"st_plusone");
+			$this->keys 		= $this->_get_keys();
 			$this->st_param 	= $this->EE->TMPL->fetch_param( 'share' );
 			$this->entry_url 	= $this->EE->TMPL->fetch_param( "entry_url" );
 			$this->entry_title 	= $this->EE->TMPL->fetch_param( "entry_title" );	
@@ -66,10 +66,72 @@ class Wt_share_this {
 		
 		
 	}
-	
-	
-	
-	
+
+
+	public function chicklet(){}
+
+	public function button(){}
+
+	public function large(){}
+
+	public function custom(){}
+
+	public function script(){}
+
+
+	private function _get_keys(){
+		return array ( 
+
+					"facebook"		=>	"st_facebook", 
+					"facebook_like" => 	"st_fblike", 
+					"twitter"		=>	"st_twitter",
+					"email"			=>	"st_email",
+					"plusone"		=>	"st_plusone",
+					"aim"			=>	"st_aim",
+					"bebo"			=>	"st_bebo",
+					"blinklist"		=>	"st_blinklist",
+					"blogger"		=>	"st_blogger",
+					"businessweek"	=>	"st_businessweek",
+					"care2"			=>	"st_care2",
+					"current"		=>	"st_current",
+					"dealsplus"		=>	"st_dealsplus",
+					"delicious"		=>	"st_delicious",
+					"digg"			=>	"st_digg",
+					"dilgo"			=>	"st_dilgo",
+					"fark"			=>	"st_fark",
+					"faves"			=>	"st_faves",
+					"fresqui"		=>	"st_fresqui",
+					"friendfeed"	=>	"st_friendfeed",
+					"funp"			=>	"st_funp",
+					"gbuzz"			=>	"st_gbuzz",
+					"google_bmarks"	=>	"st_google_bmarks",
+					"kirsty"		=>	"st_kirsty",
+					"linkedin"		=>	"st_linkedin",
+					"meaneame"		=>	"st_meaneame",
+					"messenger"		=>	"st_messenger",
+					"mister_wong"	=>	"st_mister_wong",
+					"mixx"			=>	"st_mixx",
+					"myspace"		=>	"st_myspace",
+					"n4g"			=>	"st_n4g",
+					"newsvine"		=>	"st_newsvine",
+					"oknotizie"		=>	"st_oknotizie",
+					"propeller"		=>	"st_propeller",
+					"reddit"		=>	"st_reddit",
+					"simpy"			=>	"st_simpy",
+					"slashdot"		=>	"st_slashdot",
+					"sonico"		=>	"st_sonico",
+					"sphinn"		=>	"st_sphinn",
+					"stumbleupon"	=>	"st_stumbleupon",
+					"technorati"	=>	"st_technorati",
+					"twackle"		=>	"st_twackle",
+					"twine"			=>	"st_twine",
+					"windows_live"	=>	"st_windows_live",
+					"xanga"			=>	"st_xanga",
+					"yahoo_bmarks"	=>	"st_yahoo_bmarks",					
+					"ybuzz"			=>	"st_ybuzz",
+					"yigg"			=> 	"st_yigg"
+				);
+	}
 	
 	
 	/* Displays Usage info on plugin page */
